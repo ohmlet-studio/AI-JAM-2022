@@ -24,7 +24,6 @@ public class WorldGenerator : MonoBehaviour
     [Header("Terrain height")]
     public float terrainNoiseScale;
     public float heightMultiplier = 200;
-    public static float defaultGliderHeight;
 
     [Range(0, 1)] public float groundLevel;
     public Material groundMaterial;
@@ -43,7 +42,6 @@ public class WorldGenerator : MonoBehaviour
     {
         if(MultiSceneValues.worldHeight != 0) {
             heightMultiplier = MultiSceneValues.worldHeight;
-            WorldGenerator.defaultGliderHeight = heightMultiplier + 50;
         }
 
         tileGenerator = new TileGenerator(this);
@@ -81,7 +79,7 @@ public class WorldGenerator : MonoBehaviour
 
     void initWater() {
         Vector3 baseScale = water.transform.localScale;
-        Vector3 newScale = new Vector3(this.tileSize * 50, this.tileSize * 50, baseScale.y);
+        Vector3 newScale = new Vector3(this.tileSize, this.tileSize, baseScale.y);
         water.transform.localScale = newScale;
     }
 
@@ -137,7 +135,7 @@ public class WorldGenerator : MonoBehaviour
 
                     if(tile.minHeight < this.waterLevel) {
                         // adds water to the tile
-                        GameObject waterClone = Instantiate(water, new Vector3(tilePos.x * tileSize, waterLevel, tilePos.y * tileSize), Quaternion.Euler(new Vector3(-90, 0, 0)));
+                        GameObject waterClone = Instantiate(water, new Vector3(tilePos.x * tileSize, waterLevel, tilePos.y * tileSize), Quaternion.Euler(new Vector3(90, 0, 0)));
                         waterClone.transform.parent = tile.tileObject.transform;
                     }                    
 

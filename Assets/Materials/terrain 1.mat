@@ -34,31 +34,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_2B53F282:
-        m_Texture: {fileID: 2800000, guid: 37ad0d4d757814f44ba3bc82d824e4fa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3f3419e6c67b1d2488bcc7a9efe6e830, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_45B77F75:
-        m_Texture: {fileID: 2800000, guid: e6b59b77ae19fb246b445f3cc41c5ba2, type: 3}
+        m_Texture: {fileID: 2800000, guid: ebbfad8e003775d498c34c7ce064f61c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8D2E8E65:
-        m_Texture: {fileID: 2800000, guid: 78c40a2f18561480eab11b27ad5713aa, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca4189a0a52386e4981e45b1c45bb9eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_CD87CE9A:
-        m_Texture: {fileID: 2800000, guid: 465a9ef34ad11ab48b63b9ca6e39553a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34b7ca109f6922849bfea7d54a665f3c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_DB27CB7D:
-        m_Texture: {fileID: 2800000, guid: 22da49d227e55449d9ab0dbc09fe7f46, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainNormal:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondNormal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 71b84f93b7c53ea46a6c4dd430954b1a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -75,22 +67,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_4C3F5EE4: 39
-    - Vector1_5857EFB5: 54.12
-    - Vector1_65D18AD4: 278
-    - Vector1_6F228B9F: 68.62
-    - Vector1_8032919: 5
-    - Vector1_A956083A: 130.9
-    - _BUILTIN_QueueControl: 0
-    - _BUILTIN_QueueOffset: 0
-    - _Depth: 10
-    - _NormalStrenght: 0
-    - _QueueControl: -1
+    - Vector1_4C3F5EE4: 15.5
+    - Vector1_5857EFB5: 80.9
+    - Vector1_65D18AD4: 148.9
+    - Vector1_6F228B9F: 32.4
+    - Vector1_A956083A: 204.9
+    - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0
-    - _Strenght: 0.46
-    - _Tiling: -336
-    m_Colors:
-    - _DeepColor: {r: 0.13443395, g: 0.49797362, b: 0.53773576, a: 0.7450981}
-    - _ShallowColor: {r: 0.23148805, g: 0.891315, b: 0.9622641, a: 0.5019608}
+    - _Tiling: 29.3
+    m_Colors: []
   m_BuildTextureStacks: []
