@@ -1055,7 +1055,7 @@
     },
     "m_ActiveTargets": [
         {
-            "m_Id": "1de6d03538bd4b8b83174dcaf3492912"
+            "m_Id": "72e9cd2fa196476782c938fc883f3750"
         }
     ]
 }
@@ -1598,23 +1598,6 @@
     "m_Labels": [
         "X"
     ]
-}
-
-{
-    "m_SGVersion": 2,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInTarget",
-    "m_ObjectId": "1de6d03538bd4b8b83174dcaf3492912",
-    "m_ActiveSubTarget": {
-        "m_Id": "c72bcce0f55644edb0cc1703e4b80939"
-    },
-    "m_AllowMaterialOverride": false,
-    "m_SurfaceType": 0,
-    "m_ZWriteControl": 0,
-    "m_ZTestMode": 4,
-    "m_AlphaMode": 0,
-    "m_RenderFace": 2,
-    "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
 }
 
 {
@@ -2339,10 +2322,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1267.0,
-            "y": 1066.0,
+            "x": -1282.666748046875,
+            "y": 1094.22216796875,
             "width": 208.0,
-            "height": 318.0000305175781
+            "height": 313.3333740234375
         }
     },
     "m_Slots": [
@@ -3592,6 +3575,26 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
+    "m_ObjectId": "72e9cd2fa196476782c938fc883f3750",
+    "m_ActiveSubTarget": {
+        "m_Id": "b32642dad3664aad894970360595329b"
+    },
+    "m_AllowMaterialOverride": false,
+    "m_SurfaceType": 0,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
+    "m_AlphaMode": 0,
+    "m_RenderFace": 2,
+    "m_AlphaClip": false,
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
@@ -4866,6 +4869,15 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
+    "m_ObjectId": "b32642dad3664aad894970360595329b",
+    "m_WorkflowMode": 1,
+    "m_NormalDropOffSpace": 0,
+    "m_ClearCoat": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "b36984a80a732e84b0b83b0af7250318",
     "m_Id": 0,
@@ -5079,14 +5091,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInLitSubTarget",
-    "m_ObjectId": "c72bcce0f55644edb0cc1703e4b80939",
-    "m_WorkflowMode": 1,
-    "m_NormalDropOffSpace": 0
 }
 
 {
