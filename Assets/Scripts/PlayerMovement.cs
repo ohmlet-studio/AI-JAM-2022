@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     Vector3 movement;
-    float speed = 10f;
+    float speed = 50f;
 
     const int IGNORE_RAYCAST_LAYER = 2;
 
@@ -27,8 +27,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.Raycast(rb.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
         {
-            rb.position = rb.position + hit.distance * Vector3.down;
             Debug.DrawRay(rb.position, Vector3.down * hit.distance, Color.blue);
+            Vector3 targetLocation = hit.point;
+            targetLocation += new Vector3(0, transform.localScale.y, 0);
+            rb.position = targetLocation;
+        }
+        else if (Physics.Raycast(rb.position + Vector3.up * 100f, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+        {
+            // Debug.DrawRay(rb.position, Vector3.up * hit.distance, Color.blue);
+            Vector3 targetLocation = hit.point;
+            targetLocation += new Vector3(0, transform.localScale.y, 0);
+            rb.position = targetLocation;
         }
         else
         {
