@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f413dbe2e4c05f845a61e8c870b5cc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 64361
+  seed: 0
   tileSize: 100
   terrainResolution: 10
   viewer: {fileID: 987420101}
@@ -193,8 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bae938c47000d0449b268941dbbd954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seed: 0
   noiseScale: 1
-  treeDensity: 1
+  density: 10
   treeTreshold: 0.5
   maxRandomOffset: 1
   referenceTrees:

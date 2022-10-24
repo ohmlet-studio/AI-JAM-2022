@@ -9,6 +9,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
+    public double gravity = -9.81;
     float turnSmoothVelocity;
 
     const int IGNORE_RAYCAST_LAYER = 2;
@@ -20,34 +21,22 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
 
-        if (direction.magnitude > 0.1f)
-        {
+        Vector3 move;
+        if (direction.magnitude < 0.1f) {
+            move = Vector3.zero;
+        } else {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            move = moveDir.normalized * speed * Time.deltaTime;
+
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        // Adapt height to the ground
-        Rigidbody rb = controller.attachedRigidbody;
-        RaycastHit hit;
-        int layerMask = 1 << IGNORE_RAYCAST_LAYER;
-        layerMask = ~layerMask;
+        double g = gravity * Time.deltaTime;
+        if (controller.isGrounded) g = 0;
+        controller.Move(new Vector3(move.x, (float) gravity, move.z));
 
-
-        if (Physics.Raycast(rb.position + Vector3.up * 1000f, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
-        {
-            // Debug.DrawRay(rb.position, Vector3.up * hit.distance, Color.blue);
-            Vector3 targetLocation = hit.point;
-            targetLocation += new Vector3(0, transform.localScale.y, 0);
-            rb.position = targetLocation;
-        }
-        else
-        {
-            Debug.DrawRay(rb.position, Vector3.down * 1000, Color.red);
-        }
     }
 
     private void FixedUpdate()

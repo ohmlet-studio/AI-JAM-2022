@@ -7,9 +7,13 @@ using UnityEngine;
 
 public class WorldPopulator : MonoBehaviour
 {
+    public int seed;
+
+    [Space(10)]
+
     [Header("Tree generation parameters")]
     public float noiseScale; // sample perlin noise from 0 to noiseScale for each tile
-    public int treeDensity; // max trees for each tile
+    public int density; // max trees for each tile
     [Range(0, 1)] public float treeTreshold, maxRandomOffset;
 
     [Space(10)]
@@ -26,7 +30,7 @@ public class WorldPopulator : MonoBehaviour
     void Start() {
         worldGen = FindObjectOfType<WorldGenerator>();
 
-        System.Random prng = new System.Random(worldGen.seed);
+        System.Random prng = new System.Random(seed);
         //generates a big offset to avoid symetry
         this.perlinOffsetX = prng.Next(-100000, +100000);
         this.perlinOffsetY = prng.Next(-100000, +100000);
@@ -35,7 +39,7 @@ public class WorldPopulator : MonoBehaviour
     void OnValidate()
     {
         if(worldGen != null) {
-            System.Random prng = new System.Random(worldGen.seed);
+            System.Random prng = new System.Random(seed);
             //generates a big offset to avoid symetry
             this.perlinOffsetX = prng.Next(-100000, +100000);
             this.perlinOffsetY = prng.Next(-100000, +100000);
@@ -46,12 +50,12 @@ public class WorldPopulator : MonoBehaviour
 
     public GameObject createTrees(Vector2Int tilePos, TerrainTile tile) {
         int tileSize = worldGen.tileSize;
-        GameObject parent = new GameObject("trees");
+        GameObject parent = new GameObject("objects");
 
-        float tilex = tilePos.x * tileSize - tileSize/2;
-        float tilez = tilePos.y * tileSize - tileSize/2;
+        float tilex = tilePos.x * tileSize - tileSize;
+        float tilez = tilePos.y * tileSize - tileSize;
 
-        float step = tileSize / Mathf.Sqrt(treeDensity);
+        float step = tileSize / Mathf.Sqrt(density);
         this.randomOffset = step * maxRandomOffset;
 
         for (float x = tilex; x < tilex + tileSize; x += step)
@@ -75,8 +79,6 @@ public class WorldPopulator : MonoBehaviour
                     float xTree = x + offsetx;
                     float zTree = z + offsetz;
                     float yTree = getYFromXZ(new Vector2(xTree, zTree), tile);
-
-                    Debug.Log(yTree);
 
                     if (yTree > worldGen.waterLevel) {
                         Vector3 treeOrigin = new Vector3(xTree, yTree, zTree);

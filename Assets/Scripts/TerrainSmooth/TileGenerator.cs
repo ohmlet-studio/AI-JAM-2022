@@ -18,8 +18,7 @@ public class TileGenerator
     }
 
     public void setPerlinOffset() {
-        /* changes the seed a tiny bit to get a different output */
-        System.Random prng = new System.Random(worldGen.seed + 1);
+        System.Random prng = new System.Random(worldGen.seed);
         this.perlinOffset.x = prng.Next(-100000, +100000);
         this.perlinOffset.y = prng.Next(-100000, +100000);
     }
