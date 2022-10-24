@@ -77,7 +77,7 @@ public class WorldGenerator : MonoBehaviour
 
         /* desactivation des tiles */
         loadGroundTiles(worldPos);
-        //loadTileObjects(worldPos);
+        loadTileObjects(worldPos);
     }
 
     // appellé lorsqu'on change un parametre dans l'inspector
@@ -92,6 +92,8 @@ public class WorldGenerator : MonoBehaviour
     }
 
     public void reloadTerrain() {
+        waterTiles = new List<GameObject>();
+
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject.Destroy(transform.GetChild(i).gameObject);

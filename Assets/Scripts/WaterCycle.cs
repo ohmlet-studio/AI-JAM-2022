@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterCycle : MonoBehaviour
 {
-    public int loopDuration = 45;
+    public int loopDuration = 10;
     public int maxWaterLevel;
     public int minWaterLevel;
 
@@ -20,7 +20,7 @@ public class WaterCycle : MonoBehaviour
     void FixedUpdate()
     {
         float ratio = (float)timeElapsed / loopDuration;
-        float waterLevel = minWaterLevel + (Mathf.Sin(ratio) + 1)/2 * (maxWaterLevel - minWaterLevel);
+        float waterLevel = minWaterLevel + (Mathf.Sin(ratio * 2*Mathf.PI) + 1)/2 * (maxWaterLevel - minWaterLevel);
         wg.waterLevel = waterLevel;
 
         timeElapsed += Time.deltaTime;

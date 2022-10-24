@@ -65,7 +65,7 @@ public class WorldPopulator : MonoBehaviour
                 if (sample > treeTreshold)
                 {
                     // spawn tree with some random rotation and offset
-                    Quaternion rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+                    Quaternion rotation = Quaternion.Euler(-90, Random.Range(0f, 360f), 0);
                     float offsetx = Random.Range(0f, randomOffset);
                     float offsetz = Random.Range(0f, randomOffset);
 
@@ -75,6 +75,8 @@ public class WorldPopulator : MonoBehaviour
                     float xTree = x + offsetx;
                     float zTree = z + offsetz;
                     float yTree = getYFromXZ(new Vector2(xTree, zTree), tile);
+
+                    Debug.Log(yTree);
 
                     if (yTree > worldGen.waterLevel) {
                         Vector3 treeOrigin = new Vector3(xTree, yTree, zTree);
